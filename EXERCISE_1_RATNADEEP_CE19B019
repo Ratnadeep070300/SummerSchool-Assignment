@@ -1,0 +1,15 @@
+Created on Wed Jul  7 20:25:13 2021
+
+@author: Ratnadeep CE19B019
+"""
+from numpy import random
+import math
+y = random.choice([0,1], p=[0.5,0.5], size=(100))
+y_cap = random.rand(100)
+sum=0
+for i in range(100):
+    sum=sum+y[i]*math.log(y_cap[i],2)+(1-y[i])*math.log(1-y_cap[i],2)
+    if i==99:
+        print(sum)
+        O=-1*sum/100
+        print('REQUIRED O IS',O)
